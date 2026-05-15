@@ -141,6 +141,29 @@ window.HOME_TOURS = [
     "showTours": true,
     "category": "三日遊",
     "customCategory": ""
+  },
+  {
+    "id": "tour-mp68ywl5-l6ff",
+    "visible": true,
+    "featured": true,
+    "showTours": true,
+    "sort": 70,
+    "duration": "一日遊",
+    "badge": "一日遊",
+    "category": "新增路線",
+    "customCategory": "",
+    "groupSize": "4人成團",
+    "extra1": "",
+    "extra2": "",
+    "image": "poster-turtle.jpg",
+    "imagePosition": "center top",
+    "name": "龜山島一日遊",
+    "desc": "蘭陽博物館・烏石港出海・繞島登島・海上賞鯨豚\n台灣唯一活火山島，遇見太平洋的神秘與壯闊",
+    "weekdayPrice": "2600",
+    "holidayPrice": "",
+    "price": "平日 2600",
+    "priceNote": "",
+    "link": "tour-turtle.html"
   }
 ];
 
