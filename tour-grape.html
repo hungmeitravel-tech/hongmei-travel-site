@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彰化微醺花香小旅行 · 路葡萄 × 田尾公路花園 · 宏美旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E03A2F;
+  --red-light:#F26B5E;
+  --orange:#F5A623;
+  --yellow:#FFD966;
+  --cream:#FFFDF8;
+  --light:#FFF5E6;
+  --gray:#F7F3EE;
+  --dark:#2C2C2C;
+  --mid:#6B6B6B;
+  --grape:#7B4FA0;
+  --grape-light:#EDE0F5;
+  --green:#4A8A50;
+  --green-light:#E6F4E8;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,253,248,0.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:56px;width:auto;display:block}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:.5rem 1.4rem;border-radius:2rem;font-size:.875rem;font-weight:700;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--red-light)}
+.nav-phone{font-weight:700;font-size:1rem;color:var(--red);text-decoration:none}
+.nav-phone::before{content:"📞";margin-right:.3rem}
+
+/* HERO BANNER */
+.tour-hero{
+  margin-top:68px;
+  background:linear-gradient(135deg,#7B4FA0 0%,#4A8A50 100%);
+  padding:5rem 5% 4rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.tour-hero::before{
+  content:'🍇🌸🍇🌸🍇🌸🍇🌸🍇🌸';
+  position:absolute;top:1rem;left:0;right:0;
+  font-size:1.2rem;letter-spacing:.5rem;opacity:.15;
+  white-space:nowrap;overflow:hidden;
+}
+.tour-hero-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.78rem;font-weight:700;padding:.4rem 1.2rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:1.25rem}
+.tour-hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.75rem}
+.tour-hero-sub{color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.tour-hero-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-badge-pill{background:rgba(255,255,255,0.18);color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:.45rem 1.1rem;border-radius:2rem;font-size:.82rem;font-weight:700}
+
+/* POSTER */
+.poster-section{padding:3rem 5%;max-width:900px;margin:0 auto;text-align:center}
+.poster-img{width:100%;max-width:560px;border-radius:1.5rem;box-shadow:0 16px 48px rgba(0,0,0,0.14);margin:0 auto;display:block}
+
+/* HIGHLIGHTS */
+.highlights-section{padding:4rem 5%;background:var(--grape-light)}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:.75rem}
+.section-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--dark)}
+.section-title::after{content:'';display:block;width:48px;height:3px;background:var(--red);margin:.75rem auto 0;border-radius:2px}
+
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:960px;margin:0 auto}
+.highlight-card{background:#fff;border-radius:1.25rem;padding:2rem 1.5rem;text-align:center;border:2px solid rgba(123,79,160,0.15);transition:all .3s}
+.highlight-card:hover{transform:translateY(-4px);border-color:var(--grape);box-shadow:0 8px 24px rgba(123,79,160,0.12)}
+.highlight-num{width:40px;height:40px;border-radius:50%;background:var(--grape);color:#fff;font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.highlight-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.highlight-desc{font-size:.82rem;color:var(--mid);line-height:1.75}
+
+/* ITINERARY */
+.itinerary-section{padding:4rem 5%}
+.itinerary-inner{max-width:780px;margin:0 auto}
+.itinerary-block{margin-bottom:2.5rem}
+.itinerary-time-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--grape);color:#fff;font-size:.82rem;font-weight:700;padding:.4rem 1rem;border-radius:2rem;margin-bottom:1.25rem}
+.itinerary-item{display:flex;gap:1.25rem;margin-bottom:1.25rem;padding:1.25rem 1.5rem;background:#fff;border-radius:1rem;border:1.5px solid #FFE8CC;transition:border-color .2s}
+.itinerary-item:hover{border-color:var(--orange)}
+.itinerary-icon{font-size:2rem;flex-shrink:0;width:48px;text-align:center}
+.itinerary-content{}
+.itinerary-name{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.35rem}
+.itinerary-detail{font-size:.83rem;color:var(--mid);line-height:1.75}
+.itinerary-tag{display:inline-block;background:var(--green-light);color:var(--green);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:1rem;margin-top:.4rem}
+
+/* PRICE */
+.price-section{padding:4rem 5%;background:var(--light)}
+.price-inner{max-width:780px;margin:0 auto}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.price-card{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid #FFE8CC}
+.price-card-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--yellow);display:flex;align-items:center;gap:.5rem}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.price-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.88rem;color:var(--mid);line-height:1.6}
+.price-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.price-list.exclude li::before{content:'✗';color:#ccc}
+.price-main{background:linear-gradient(135deg,var(--grape),#9B6AC0);border-radius:1.25rem;padding:2.5rem 2rem;text-align:center;color:#fff;margin-bottom:1.5rem}
+.price-amount{font-family:'Noto Serif TC',serif;font-size:3rem;font-weight:900;line-height:1}
+.price-amount small{font-size:1.1rem;font-weight:400;opacity:.8}
+.price-note{font-size:.85rem;opacity:.75;margin-top:.5rem}
+.price-team{background:rgba(255,255,255,0.15);border-radius:.75rem;padding:.75rem 1rem;margin-top:1.25rem;font-size:.88rem;font-weight:700}
+
+/* MEETING */
+.meeting-section{padding:4rem 5%;background:var(--gray)}
+.meeting-inner{max-width:780px;margin:0 auto}
+.meeting-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.meeting-card{background:#fff;border-radius:1.25rem;padding:1.75rem;border:2px solid #FFE8CC;display:flex;gap:1rem;align-items:flex-start}
+.meeting-icon{font-size:2.2rem;flex-shrink:0}
+.meeting-title{font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.meeting-detail{font-size:.83rem;color:var(--mid);line-height:1.75}
+.meeting-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:1rem;margin-bottom:.4rem}
+
+/* RECOMMEND */
+.recommend-section{padding:4rem 5%}
+.recommend-inner{max-width:780px;margin:0 auto}
+.recommend-card{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid var(--green-light);margin-bottom:1rem}
+.recommend-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.recommend-icon{font-size:1.6rem}
+.recommend-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark)}
+.recommend-shops{display:flex;flex-wrap:wrap;gap:.6rem}
+.shop-pill{background:var(--green-light);color:var(--green);font-size:.82rem;font-weight:700;padding:.35rem .9rem;border-radius:2rem;border:1.5px solid rgba(74,138,80,0.25)}
+
+/* BOOK CTA */
+.book-section{background:linear-gradient(135deg,var(--grape) 0%,#9B6AC0 100%);padding:4.5rem 5%;text-align:center}
+.book-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.book-sub{color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:2.5rem;line-height:1.8}
+.book-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--grape);padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+.btn-outline-white{border:2px solid rgba(255,255,255,.7);color:#fff;padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-outline-white:hover{background:rgba(255,255,255,.15)}
+.book-info{margin-top:2rem;color:rgba(255,255,255,.65);font-size:.82rem;line-height:2}
+
+/* FOOTER */
+footer{background:var(--dark);padding:3.5rem 5% 1.5rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logos{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-logo-tourbus{height:44px;width:auto;border-radius:.5rem;background:#fff;padding:.25rem .5rem}
+.footer-tourbus{margin-top:1rem}
+.tourbus-badge{display:inline-block;background:var(--red);color:#fff;font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:2rem}
+.tourbus-desc{font-size:.75rem;color:rgba(255,255,255,0.45);margin-top:.5rem}
+.footer-contact-title{font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.55rem}
+.footer-contact-list a,.footer-contact-list span{font-size:.83rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s;line-height:1.5}
+.footer-contact-list a:hover{color:var(--yellow)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;transition:all .2s}
+.social-btn:hover{background:var(--red);color:#fff}
+.footer-license{display:flex;flex-direction:column;gap:.35rem}
+.footer-license span{font-size:.78rem;color:rgba(255,255,255,0.4)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.35)}
+
+/* BREADCRUMB */
+.breadcrumb{padding:.75rem 5%;background:#fff;border-bottom:1px solid #FFE8CC;font-size:.8rem;color:var(--mid)}
+.breadcrumb a{color:var(--mid);text-decoration:none}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 .4rem;opacity:.5}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .price-grid{grid-template-columns:1fr}
+  .meeting-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .tour-hero{padding:3.5rem 5% 3rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="HM-LOGO.png" alt="宏美旅行社 x Fun鬆旅遊"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="tours.html">探索行程</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="index.html#contact">聯繫我們</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1.5rem">
+      <a href="tel:0982331633" class="nav-phone">0982 331633</a>
+      <a href="tel:0982331633" class="nav-cta">立即報名</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb" style="margin-top:68px">
+  <a href="index.html">首頁</a><span>›</span>
+  <a href="tours.html">探索行程</a><span>›</span>
+  彰化微醺花香小旅行
+</div>
+
+<!-- HERO -->
+<div class="tour-hero">
+  <div class="tour-hero-tag">🍇 一日遊 · 彰化在地精選</div>
+  <h1 class="tour-hero-title">彰化微醺花香小旅行</h1>
+  <p class="tour-hero-sub">路葡萄 × 田尾公路花園<br>漫步葡萄隧道・享受葡萄宴・走逛花鄉植感日常</p>
+  <div class="tour-hero-badges">
+    <span class="hero-badge-pill">🍇 路葡萄酒莊</span>
+    <span class="hero-badge-pill">🌸 田尾公路花園</span>
+    <span class="hero-badge-pill">👥 6人成團</span>
+    <span class="hero-badge-pill">💰 NT$2,599／人</span>
+  </div>
+</div>
+
+<!-- 海報 -->
+<div class="poster-section">
+  <img src="poster-grape.jpg" alt="彰化微醺花香小旅行行程海報" class="poster-img">
+</div>
+
+<!-- 行程亮點 -->
+<section class="highlights-section">
+  <div class="section-header">
+    <div class="section-tag">HIGHLIGHTS</div>
+    <h2 class="section-title">行程亮點</h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-num">1</div>
+      <div class="highlight-title">路葡萄酒莊・葡萄隧道</div>
+      <div class="highlight-desc">走進全台最美葡萄隧道，串串果實纍纍如寶石高掛，感受30年職人農家的用心栽培。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">2</div>
+      <div class="highlight-title">葡萄宴體驗</div>
+      <div class="highlight-desc">在葡萄園裡享用風味餐點，搭配在地釀製葡萄酒，微醺午宴是最難忘的彰化滋味。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">3</div>
+      <div class="highlight-title">伴手禮＆採果</div>
+      <div class="highlight-desc">隨行附贈375ml在地葡萄酒一瓶，並可親手採一串新鮮葡萄帶回家，滿載而歸。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">4</div>
+      <div class="highlight-title">田尾公路花園</div>
+      <div class="highlight-desc">台灣最大花卉聚集地，沿途花香盈路，140家園藝業者，騎腳踏車慢遊最療癒。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 行程安排 -->
+<section class="itinerary-section">
+  <div class="itinerary-inner">
+    <div class="section-header">
+      <div class="section-tag">ITINERARY</div>
+      <h2 class="section-title">行程安排</h2>
+    </div>
+
+    <div class="itinerary-block">
+      <div class="itinerary-time-label">☀️ 上午｜路葡萄園區體驗</div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🚌</div>
+        <div class="itinerary-content">
+          <div class="itinerary-name">集合出發</div>
+          <div class="itinerary-detail">台中高鐵會面點4 ／ 台中火車站鐵鹿大街A區集合，專車前往埔心路葡萄酒莊。</div>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🍇</div>
+        <div class="itinerary-content">
+          <div class="itinerary-name">路葡萄酒莊・葡萄隧道導覽</div>
+          <div class="itinerary-detail">漫步浪漫葡萄長廊，感受彰化埔心30年職人果農的用心。園區免費參觀，可拍照散策，季節期間可體驗現採葡萄。</div>
+          <span class="itinerary-tag">📍 彰化縣埔心鄉</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🥂</div>
+        <div class="itinerary-content">
+          <div class="itinerary-name">葡萄宴・品酒體驗</div>
+          <div class="itinerary-detail">在葡萄園享用風味午餐，搭配4款在地釀製葡萄酒，主餐3選1，附贈375ml葡萄酒一瓶及新鮮葡萄一串帶回家。</div>
+          <span class="itinerary-tag">🍽️ 含餐</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="itinerary-block">
+      <div class="itinerary-time-label">🌸 下午｜田尾公路花園自由漫遊</div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🌺</div>
+        <div class="itinerary-content">
+          <div class="itinerary-name">田尾公路花園・自由探索</div>
+          <div class="itinerary-detail">台灣最大花卉集散地，超過140家園藝業者，四季花色各異。可租借腳踏車悠遊，或在景觀咖啡廳小憩，自由安排、輕鬆寫意。</div>
+          <span class="itinerary-tag">📍 彰化縣田尾鄉</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🚌</div>
+        <div class="itinerary-content">
+          <div class="itinerary-name">賦歸</div>
+          <div class="itinerary-detail">專車返回台中高鐵 ／ 台中火車站，結束美好一日小旅行。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 費用說明 -->
+<section class="price-section">
+  <div class="price-inner">
+    <div class="section-header">
+      <div class="section-tag">PRICING</div>
+      <h2 class="section-title">費用說明</h2>
+    </div>
+    <div class="price-main">
+      <div class="price-amount">NT$2,599 <small>／人（含餐）</small></div>
+      <div class="price-note">以上費用均含稅，報名即確認</div>
+      <div class="price-team">👥 6人成團・歡迎揪團同行</div>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-card-title">✅ 費用包含</div>
+        <ul class="price-list">
+          <li>來回專車交通</li>
+          <li>旅遊保險</li>
+          <li>葡萄宴午餐</li>
+          <li>品嚐葡萄酒</li>
+          <li>375ml在地葡萄酒一瓶</li>
+          <li>新鮮葡萄一串</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-card-title">❌ 費用不含</div>
+        <ul class="price-list exclude">
+          <li>個人消費（田尾購物、額外餐飲）</li>
+          <li>腳踏車租借費用</li>
+          <li>景點門票（部分需自費）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 集合地點 -->
+<section class="meeting-section">
+  <div class="meeting-inner">
+    <div class="section-header">
+      <div class="section-tag">MEETING POINT</div>
+      <h2 class="section-title">集合地點</h2>
+    </div>
+    <div class="meeting-grid">
+      <div class="meeting-card">
+        <div class="meeting-icon">🚅</div>
+        <div>
+          <span class="meeting-tag">高鐵集合</span>
+          <div class="meeting-title">台中高鐵站</div>
+          <div class="meeting-detail">台中高鐵站 會面點 4（Meeting Point 4）<br>請依現場指標前往，工作人員會在場等候。</div>
+        </div>
+      </div>
+      <div class="meeting-card">
+        <div class="meeting-icon">🚂</div>
+        <div>
+          <span class="meeting-tag">火車集合</span>
+          <div class="meeting-title">台中火車站 鐵鹿大街A區</div>
+          <div class="meeting-detail">台中火車站 鐵鹿大街 1F A區入口<br>台鐵便當旁，大型招牌易辨識。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 田尾推薦花店 -->
+<section class="recommend-section">
+  <div class="recommend-inner">
+    <div class="section-header">
+      <div class="section-tag">RECOMMENDED</div>
+      <h2 class="section-title">宏美推薦・田尾特色花園</h2>
+    </div>
+    <p style="text-align:center;color:var(--mid);font-size:.9rem;margin-bottom:2rem">田尾下午自由活動，以下是宏美特別推薦的幾家特色花園，供您參考。</p>
+    <div class="recommend-card">
+      <div class="recommend-header">
+        <div class="recommend-icon">🏡</div>
+        <div class="recommend-title">景觀庭園 ／ 打卡推薦</div>
+      </div>
+      <div class="recommend-shops">
+        <span class="shop-pill">菁芳園</span>
+        <span class="shop-pill">綠果庭院</span>
+        <span class="shop-pill">輝豐九重葛園</span>
+        <span class="shop-pill">全得玫瑰莊園</span>
+        <span class="shop-pill">農村仙人掌園</span>
+      </div>
+    </div>
+    <div class="recommend-card">
+      <div class="recommend-header">
+        <div class="recommend-icon">☕</div>
+        <div class="recommend-title">景觀咖啡 ／ 下午茶</div>
+      </div>
+      <div class="recommend-shops">
+        <span class="shop-pill">田尾綠海咖啡館</span>
+        <span class="shop-pill">將園庭園咖啡</span>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--mid);font-size:.8rem;margin-top:1.5rem">※ 以上景點實際營業時間請以各店家公告為主</p>
+  </div>
+</section>
+
+<!-- 報名 CTA -->
+<section class="book-section">
+  <div class="book-title">準備好出發了嗎？</div>
+  <p class="book-sub">6人成團，歡迎揪親友同行<br>有任何問題，歡迎電話或 LINE 直接詢問</p>
+  <div class="book-btns">
+    <a href="tel:0982331633" class="btn-white">📞 電話報名 0982 331633</a>
+    <a href="https://line.me/R/ti/p/@hm9420" target="_blank" class="btn-outline-white">💬 LINE 詢問 @hm9420</a>
+  </div>
+  <div class="book-info">
+    宏美旅行社　交觀甲字：7619　品保彰字：0081<br>
+    彰化縣彰化市金馬路一段409號
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-block">
+        <div class="footer-logos">
+          <a href="index.html"><img src="HM-LOGO.png" alt="宏美旅行社" class="footer-logo"></a>
+          <a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener"><img src="tourbus-logo.jpg" alt="台灣觀巴" class="footer-logo-tourbus"></a>
+        </div>
+        <div class="footer-tourbus">
+          <span class="tourbus-badge"><a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">🚌 台灣觀巴官方承辦旅行社</a></span>
+          <div class="tourbus-desc">交通部觀光署認可 · 4人成團</div>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-contact-title">聯絡我們</div>
+        <div class="footer-contact-list">
+          <a href="tel:0982331633">📞 聯絡電話：0982 331633</a>
+          <a href="https://line.me/R/ti/p/@hm9420">💬 LINE：@hm9420</a>
+          <a href="https://api.whatsapp.com/send?phone=886982218544">💚 WhatsApp：+886 982218544</a>
+          <span>💬 WeChat：hmhm5277</span>
+          <a href="mailto:pley168@gmail.com">✉️ Email：pley168@gmail.com</a>
+          <span>📍 彰化縣彰化市金馬路一段409號</span>
+          <span>交觀甲字：7619　品保彰字：0081</span>
+        </div>
+      </div>
+      <div class="footer-social-block">
+        <div class="footer-contact-title">追蹤我們</div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hm1766fun" class="social-btn" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <div class="footer-license">
+          <span>交觀甲字：7619</span>
+          <span>品保彰字：0081</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 宏美旅行社 × Fun鬆旅遊　|　All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

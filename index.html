@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏美旅行社 x Fun鬆旅遊｜首頁 0515V06</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E03A2F;
+  --red-light:#F26B5E;
+  --orange:#F5A623;
+  --yellow:#FFD966;
+  --cream:#FFFDF8;
+  --light:#FFF5E6;
+  --gray:#F7F3EE;
+  --dark:#2C2C2C;
+  --mid:#6B6B6B;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,253,248,0.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:56px;width:auto;display:block}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:.5rem 1.4rem;border-radius:2rem;font-size:.875rem;font-weight:700;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--red-light)}
+.nav-phone{font-weight:700;font-size:1rem;color:var(--red);text-decoration:none}
+.nav-phone::before{content:"📞";margin-right:.3rem}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:68px;background:var(--light)}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 5% 5rem 8%}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow);color:var(--dark);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:2rem;width:fit-content}
+.hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:1.5rem}
+.hero-title em{color:var(--red);font-style:normal}
+.hero-subtitle{color:var(--mid);font-size:.95rem;line-height:1.9;margin-bottom:2.5rem;max-width:400px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--red);color:#fff;padding:.85rem 2rem;border-radius:2rem;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:var(--red-light);transform:translateY(-2px)}
+.btn-outline{border:2px solid var(--red);color:var(--red);padding:.85rem 2rem;border-radius:2rem;font-size:.95rem;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-outline:hover{background:var(--red);color:#fff}
+.hero-right{position:relative;overflow:hidden;background:linear-gradient(135deg,#7ABFB0,#4A8A80);display:flex;align-items:center;justify-content:center;font-size:8rem}
+.hero-badge{position:absolute;bottom:2.5rem;left:2rem;background:#fff;border-radius:1rem;padding:1rem 1.5rem;text-align:center;border:3px solid var(--yellow)}
+.hero-badge-num{font-family:'Noto Serif TC',serif;font-size:2.2rem;font-weight:900;color:var(--red);line-height:1}
+.hero-badge-text{font-size:.7rem;color:var(--mid);margin-top:.2rem;letter-spacing:.1em}
+
+/* TRUST BAR */
+.trust-bar{background:var(--red);padding:1.1rem 5%;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;color:#fff;font-size:.85rem;font-weight:500}
+.trust-item strong{font-weight:700}
+
+/* SECTION */
+.section{padding:5rem 5%}
+.section-alt{background:var(--gray)}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:.75rem}
+.section-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--dark)}
+.section-title::after{content:'';display:block;width:48px;height:3px;background:var(--red);margin:.75rem auto 0;border-radius:2px}
+
+/* TOURS */
+.tours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.tour-card{background:#fff;border-radius:1.25rem;overflow:hidden;border:2px solid #FFE8CC;transition:all .3s;cursor:pointer}
+.tour-card:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 12px 32px rgba(224,58,47,0.12)}
+.tour-img{height:190px;position:relative;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.tour-badge{position:absolute;top:.85rem;left:.85rem;font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:2rem;background:var(--red);color:#fff}
+.tour-body{padding:1.25rem}
+.tour-name{font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.tour-desc{font-size:.82rem;color:var(--mid);line-height:1.75;margin-bottom:1rem}
+.tour-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #FFE8CC;padding-top:.85rem}
+.tour-price{font-weight:700;color:var(--red);font-size:.95rem}
+.tour-price small{font-size:.7rem;color:var(--mid);font-weight:400}
+.tour-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin:-.25rem 0 .85rem}
+.tour-meta span{font-size:.72rem;font-weight:700;color:#8A3A22;background:#FFF4E0;border:1px solid #FFE0B8;border-radius:999px;padding:.22rem .55rem;line-height:1.35}
+.tour-price-list{display:flex;flex-direction:column;gap:.12rem}
+.tour-price-line{white-space:nowrap}
+.tour-link{font-size:.82rem;color:var(--red);font-weight:700;text-decoration:none}
+.tour-link:hover{text-decoration:underline}
+
+
+.tour-card[hidden]{display:none!important}
+.tour-card.is-generated{cursor:default}
+.tour-empty{max-width:760px;margin:0 auto;background:#fff;border:2px dashed #F5D6B2;border-radius:1rem;padding:2rem;text-align:center;color:var(--mid);line-height:1.8}
+.tour-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.12));pointer-events:none}
+.tour-img .tour-badge{z-index:1}
+
+/* WHY */
+.why-section{background:var(--light);padding:5rem 5%}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:960px;margin:0 auto}
+.why-card{background:#fff;border-radius:1.25rem;padding:2rem 1.5rem;text-align:center;border:2px solid #FFE8CC;transition:border-color .2s}
+.why-card:hover{border-color:var(--orange)}
+.why-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.why-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.why-desc{font-size:.82rem;color:var(--mid);line-height:1.75}
+
+/* CONTACT */
+.contact-section{background:var(--gray);padding:5rem 5%}
+.contact-inner{max-width:720px;margin:0 auto;text-align:center}
+.contact-phone-big{font-family:'Noto Serif TC',serif;font-size:2.8rem;font-weight:900;color:var(--red);margin:1.5rem 0;display:block;letter-spacing:.05em;text-decoration:none}
+.contact-phone-big:hover{color:var(--red-light)}
+.contact-info-list{display:inline-flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;text-align:left}
+.contact-info-item{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--dark);font-size:.95rem;transition:color .2s}
+.contact-info-item:hover{color:var(--red)}
+.ci-icon{width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ci-icon svg{width:22px;height:22px}
+.ci-phone svg{stroke:var(--red)}
+.ci-email svg{stroke:var(--red)}
+.ci-addr svg{stroke:var(--red)}
+.ci-line svg{fill:#06C755}
+.ci-whatsapp svg{fill:#25D366}
+.ci-wechat svg{fill:#07C160}
+.ci-text{line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--dark);padding:3.5rem 5% 1.5rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logos{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-logo-tourbus{height:44px;width:auto;border-radius:.5rem;background:#fff;padding:.25rem .5rem}
+.footer-tourbus{margin-top:1rem}
+.tourbus-badge{display:inline-block;background:var(--red);color:#fff;font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:2rem}
+.tourbus-desc{font-size:.75rem;color:rgba(255,255,255,0.45);margin-top:.5rem}
+.footer-contact-title{font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.55rem}
+.footer-contact-list a,.footer-contact-list span{font-size:.83rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s;line-height:1.5}
+.footer-contact-list a:hover{color:var(--yellow)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;transition:all .2s}
+.social-btn:hover{background:var(--red);color:#fff}
+.footer-license{display:flex;flex-direction:column;gap:.35rem}
+.footer-license span{font-size:.78rem;color:rgba(255,255,255,0.4)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.35)}
+
+.bg-ocean{background:linear-gradient(135deg,#4A90D9,#2E6DA4)}
+.bg-forest{background:linear-gradient(135deg,#5C8A52,#3D6B42)}
+.bg-mountain{background:linear-gradient(135deg,#7A9E7E,#4A7A6E)}
+.bg-culture{background:linear-gradient(135deg,#E8A020,#C8783A)}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:3.5rem 6% 2.5rem;order:2}
+  .hero-right{height:240px;order:1}
+  .nav-links{display:none}
+  .trust-bar{gap:1.25rem}
+  .footer-top{grid-template-columns:1fr}
+  .contact-phone-big{font-size:2rem}
+}
+
+/* V06 NEWS / LIST */
+.news-list{max-width:920px;margin:0 auto;display:grid;gap:1rem}
+.news-item{background:#fff;border:2px solid #FFE8CC;border-radius:1rem;padding:1rem 1.2rem;display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:flex-start;transition:.2s}
+.news-item:hover{border-color:var(--orange);box-shadow:0 10px 24px rgba(224,58,47,.08)}
+.news-date{font-weight:900;color:var(--red);font-size:.82rem;white-space:nowrap;padding-top:.15rem}
+.news-cat{display:inline-flex;width:fit-content;background:#FFF4E0;color:#8A3A22;border:1px solid #FFE0B8;border-radius:999px;padding:.15rem .55rem;font-size:.72rem;font-weight:900;margin-bottom:.35rem}
+.news-title{font-weight:900;font-size:1rem;margin-bottom:.25rem;color:var(--dark)}
+.news-summary{font-size:.84rem;line-height:1.75;color:var(--mid)}
+.news-more{font-size:.82rem;color:var(--red);font-weight:900;text-decoration:none;white-space:nowrap;padding-top:.2rem}
+.news-more:hover{text-decoration:underline}
+.section-actions{text-align:center;margin-top:1.6rem}.section-actions a{display:inline-flex;background:var(--red);color:#fff;text-decoration:none;border-radius:999px;padding:.72rem 1.3rem;font-weight:900}
+.tours-toolbar{max-width:1100px;margin:0 auto 1.2rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}.filter-btn{border:1px solid #FFE0B8;background:#fff;color:#8A3A22;border-radius:999px;padding:.45rem .9rem;font-weight:900;cursor:pointer}.filter-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
+.page-hero{padding:9rem 5% 4rem;background:linear-gradient(135deg,#FFF5E6,#FFFDF8);text-align:center}.page-hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin:0 0 1rem;color:var(--dark)}.page-hero p{color:var(--mid);line-height:1.9;max-width:680px;margin:0 auto}
+@media(max-width:768px){.news-item{grid-template-columns:1fr}.news-more{padding-top:0}.news-date{white-space:normal}}
+
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><img src="HM-LOGO.png" alt="宏美旅行社 x Fun鬆旅遊"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="tours.html">探索行程</a></li>
+      <li><a href="news.html">最新消息</a></li>
+      <li><a href="#contact">聯繫我們</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1.5rem">
+      <a href="tel:0982331633" class="nav-phone">0982 331633</a>
+      <a href="tel:0982331633" class="nav-cta">立即諮詢</a>
+    </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">🚌 彰化在地旅行社 × 台灣觀巴承辦</span>
+    <h1 class="hero-title">出發吧！<br>讓每個人都能<br><em>輕鬆愉快</em>地旅行</h1>
+    <p class="hero-subtitle">宏美旅行社深耕彰化多年，專業規劃一日遊、多日遊與台灣觀巴行程，從出發到回家，每個細節都為您安排妥當。</p>
+    <div class="hero-btns">
+      <a href="tours.html" class="btn-primary">探索所有行程</a>
+      <a href="tel:0982331633" class="btn-outline">📞 電話詢問</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    🏝️
+    <div class="hero-badge">
+      <div class="hero-badge-num">20+</div>
+      <div class="hero-badge-text">年在地服務</div>
+    </div>
+  </div>
+</section>
+<div class="trust-bar">
+  <div class="trust-item">✅ 政府合法立案旅行社</div>
+  <div class="trust-item">🛡️ 品保協會會員・有保障</div>
+  <div class="trust-item">🚌 台灣觀巴 <strong>承辦旅行社</strong>・4人成團</div>
+  <div class="trust-item">📍 彰化在地 <strong>深耕服務</strong></div>
+</div>
+
+
+<section class="section" id="featured">
+  <div class="section-header">
+    <div class="section-tag">FEATURED TOURS</div>
+    <h2 class="section-title">近期推薦行程</h2>
+  </div>
+  <div class="tours-grid" id="homeToursGrid" aria-live="polite"><div class="tour-empty">行程資料載入中...</div></div>
+  <div class="section-actions"><a href="tours.html">探索所有行程 →</a></div>
+</section>
+<section class="section section-alt" id="news">
+  <div class="section-header">
+    <div class="section-tag">NEWS</div>
+    <h2 class="section-title">最新消息</h2>
+  </div>
+  <div class="news-list" id="homeNewsList"><div class="tour-empty">最新消息載入中...</div></div>
+  <div class="section-actions"><a href="news.html">查看完整消息 →</a></div>
+</section>
+<section class="why-section">
+  <div class="section-header">
+    <div class="section-tag">WHY HUNG MEI</div>
+    <h2 class="section-title">為什麼選擇宏美</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🏆</span>
+      <div class="why-title">合法立案保障</div>
+      <div class="why-desc">交觀甲字：7619、品保彰字：81，每一趟旅程都有政府認證保障。</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🗺️</span>
+      <div class="why-title">專業行程規劃</div>
+      <div class="why-desc">深耕彰化多年，每條路線都經過精心規劃，讓您放心出遊。</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">😊</span>
+      <div class="why-title">輕鬆無壓旅遊</div>
+      <div class="why-desc">從集合到返程全程安排，您只需要帶上好心情，其餘交給我們。</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📞</span>
+      <div class="why-title">在地即時服務</div>
+      <div class="why-desc">彰化在地團隊，電話一通、LINE 一傳，馬上為您解答所有問題。</div>
+    </div>
+  </div>
+</section>
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-header">
+      <div class="section-tag">CONTACT US</div>
+      <h2 class="section-title">立即與我們聯繫</h2>
+    </div>
+    <p style="color:var(--mid);font-size:.95rem;line-height:1.8">想了解更多行程細節？歡迎直接來電或加 LINE 詢問，我們很樂意為您量身規劃。</p>
+    <a href="tel:0982331633" class="contact-phone-big">0982 331633</a>
+    <div class="contact-info-list">
+      <a href="tel:0982331633" class="contact-info-item">
+        <span class="ci-icon ci-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="ci-text">聯絡電話：0982 331633</span>
+      </a>
+      <a href="https://line.me/R/ti/p/@hm9420" class="contact-info-item" target="_blank">
+        <span class="ci-icon ci-line">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </span>
+        <span class="ci-text">LINE：@hm9420</span>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=886982218544" class="contact-info-item" target="_blank">
+        <span class="ci-icon ci-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        <span class="ci-text">WhatsApp：+886 982218544</span>
+      </a>
+      <div class="contact-info-item">
+        <span class="ci-icon ci-wechat">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.11.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-3.74 2.742c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm5.4 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/></svg>
+        </span>
+        <span class="ci-text">WeChat：hmhm5277</span>
+      </div>
+      <a href="mailto:pley168@gmail.com" class="contact-info-item">
+        <span class="ci-icon ci-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <span class="ci-text">Email：pley168@gmail.com</span>
+      </a>
+      <div class="contact-info-item">
+        <span class="ci-icon ci-addr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="ci-text">彰化縣彰化市金馬路一段409號</span>
+      </div>
+      <div class="contact-info-item" style="margin-top:.5rem;padding-top:.75rem;border-top:1px solid #FFE8CC">
+        <span class="ci-text" style="color:var(--mid);font-size:.8rem">交觀甲字：7619　｜　品保彰字：81</span>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-block">
+        <div class="footer-logos">
+          <a href="#"><img src="HM-LOGO.png" alt="宏美旅行社" class="footer-logo"></a>
+          <a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener"><img src="tourbus-logo.jpg" alt="台灣觀巴" class="footer-logo-tourbus"></a>
+        </div>
+        <div class="footer-tourbus">
+          <span class="tourbus-badge"><a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">🚌 台灣觀巴官方承辦旅行社</a></span>
+          <div class="tourbus-desc">交通部觀光署認可 · 4人成團</div>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-contact-title">聯絡我們</div>
+        <div class="footer-contact-list">
+          <a href="tel:0982331633">📞 聯絡電話：0982 331633</a>
+          <a href="https://line.me/R/ti/p/@hm9420">💬 LINE：@hm9420</a>
+          <a href="https://api.whatsapp.com/send?phone=886982218544">💚 WhatsApp：+886 982218544</a>
+          <span>💬 WeChat：hmhm5277</span>
+          <a href="mailto:pley168@gmail.com">✉️ Email：pley168@gmail.com</a>
+          <span>📍 彰化縣彰化市金馬路一段409號</span>
+          <span>交觀甲字：7619　品保彰字：81</span>
+        </div>
+      </div>
+      <div class="footer-social-block">
+        <div class="footer-contact-title">追蹤我們</div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hm1766fun" class="social-btn" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <div class="footer-license">
+          <span>交觀甲字：7619</span>
+          <span>品保彰字：81</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 宏美旅行社 × Fun鬆旅遊　|　All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script src="home-data.js"></script>
+<script>
+(function(){
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (ch) => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'}[ch]));
+  const safeUrl = (value) => { const text=String(value??'').trim(); return (!text || /^javascript:/i.test(text)) ? '#' : text; };
+  const displayCategory = (item) => item.category === '自訂分類' ? (item.customCategory || '其他') : (item.category || '其他');
+  const priceHtml = (item) => {
+    const weekday=String(item.weekdayPrice||'').trim(); const holiday=String(item.holidayPrice||'').trim();
+    if(weekday || holiday){
+      return `<div class="tour-price-list">${weekday?`<div class="tour-price-line">平日 ${escapeHtml(weekday)}</div>`:''}${holiday?`<div class="tour-price-line">假日 ${escapeHtml(holiday)}</div>`:''}</div>`;
+    }
+    return `${escapeHtml(item.price || '詢問報價')} ${item.priceNote?`<small>${escapeHtml(item.priceNote)}</small>`:''}`;
+  };
+  const metaHtml = (item) => {
+    const tags=[item.groupSize,item.extra1,item.extra2].map(v=>String(v||'').trim()).filter(Boolean);
+    return tags.length ? `<div class="tour-meta">${tags.map(tag=>`<span>${escapeHtml(tag)}</span>`).join('')}</div>` : '';
+  };
+  function tourCard(item){
+    const image=escapeHtml(item.image||''); const position=escapeHtml(item.imagePosition||'center center'); const badge=escapeHtml(item.duration||item.badge||'行程');
+    return `<article class="tour-card is-generated"><div class="tour-img" style="background-image:url('${image}');background-size:cover;background-position:${position}"><span class="tour-badge">${badge}</span></div><div class="tour-body"><div class="tour-name">${escapeHtml(item.name||'未命名行程')}</div><div class="tour-desc">${escapeHtml(item.desc||'')}</div>${metaHtml(item)}<div class="tour-footer"><div class="tour-price">${priceHtml(item)}</div><a href="${escapeHtml(safeUrl(item.link))}" class="tour-link">查看行程 →</a></div></div></article>`;
+  }
+  function renderFeatured(){
+    const grid=document.getElementById('homeToursGrid'); if(!grid) return;
+    const tours=(Array.isArray(window.HOME_TOURS)?window.HOME_TOURS:[]).filter(x=>x && x.visible!==false && x.featured===true).sort((a,b)=>Number(a.sort||999)-Number(b.sort||999));
+    grid.innerHTML=tours.length?tours.map(tourCard).join(''):'<div class="tour-empty">目前尚未設定首頁主推行程。請在管理頁把「首頁主推」設為是。</div>';
+  }
+  function renderNews(){
+    const list=document.getElementById('homeNewsList'); if(!list) return;
+    const news=(Array.isArray(window.HOME_NEWS)?window.HOME_NEWS:[]).filter(x=>x && x.visible!==false && x.showHomeNews===true).sort((a,b)=>Number(a.sort||999)-Number(b.sort||999)).slice(0,5);
+    list.innerHTML=news.length?news.map(item=>`<article class="news-item"><div class="news-date">${escapeHtml(item.date||'')}</div><div><div class="news-cat">${escapeHtml(displayCategory(item))}</div><div class="news-title">${escapeHtml(item.title||'未命名消息')}</div><div class="news-summary">${escapeHtml(item.summary||'')}</div></div><a class="news-more" href="${escapeHtml(safeUrl(item.link))}">查看 →</a></article>`).join(''):'<div class="tour-empty">目前尚未設定最新消息。</div>';
+  }
+  renderFeatured(); renderNews();
+})();
+</script>
+
+<!--
+ENGINEERING_LOG 0515V06
+- 基底：宏美旅行社首頁模組化_0515V05.zip。
+- 移除首頁前台管理提示文字。
+- 首頁卡片改為只顯示 featured=true 的近期推薦行程。
+- 新增首頁最新消息摘要區，資料來源為 HOME_NEWS。
+- 新增探索行程 tours.html 與最新消息 news.html。
+- 未修改各 tour-xxx.html 詳細分頁與圖片檔。
+-->
+</body>
+</html>

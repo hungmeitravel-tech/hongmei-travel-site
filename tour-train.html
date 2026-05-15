@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>藍皮解憂號・阿塱壹三日遊 · 宏美旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E03A2F;
+  --red-light:#F26B5E;
+  --orange:#F5A623;
+  --yellow:#FFD966;
+  --cream:#FFFDF8;
+  --light:#FFF5E6;
+  --gray:#F7F3EE;
+  --dark:#2C2C2C;
+  --mid:#6B6B6B;
+  --blue:#2A6496;
+  --blue-light:#EAF3FB;
+  --teal:#2A8A7A;
+  --teal-light:#E0F4F1;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,253,248,0.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:56px;width:auto;display:block}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:.5rem 1.4rem;border-radius:2rem;font-size:.875rem;font-weight:700;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--red-light)}
+.nav-phone{font-weight:700;font-size:1rem;color:var(--red);text-decoration:none}
+.nav-phone::before{content:"📞";margin-right:.3rem}
+
+/* BREADCRUMB */
+.breadcrumb{padding:.75rem 5%;background:#fff;border-bottom:1px solid #FFE8CC;font-size:.8rem;color:var(--mid);margin-top:68px}
+.breadcrumb a{color:var(--mid);text-decoration:none}
+.breadcrumb a:hover{color:var(--red)}
+.breadcrumb span{margin:0 .4rem;opacity:.5}
+
+/* HERO */
+.tour-hero{
+  background:linear-gradient(135deg,#1a3a5c 0%,#2A6496 50%,#2A8A7A 100%);
+  padding:5rem 5% 4rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.tour-hero::before{
+  content:'🚂🌊🚂🌊🚂🌊🚂🌊🚂🌊';
+  position:absolute;top:1rem;left:0;right:0;
+  font-size:1.2rem;letter-spacing:.5rem;opacity:.12;
+  white-space:nowrap;overflow:hidden;
+}
+.tour-hero-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.78rem;font-weight:700;padding:.4rem 1.2rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:1.25rem}
+.tour-hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.75rem}
+.tour-hero-sub{color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.tour-hero-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-badge-pill{background:rgba(255,255,255,0.18);color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:.45rem 1.1rem;border-radius:2rem;font-size:.82rem;font-weight:700}
+
+/* POSTER */
+.poster-section{padding:3rem 5%;max-width:900px;margin:0 auto;text-align:center}
+.poster-img{width:100%;max-width:560px;border-radius:1.5rem;box-shadow:0 16px 48px rgba(0,0,0,0.14);margin:0 auto;display:block}
+
+/* SECTION */
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:.75rem}
+.section-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--dark)}
+.section-title::after{content:'';display:block;width:48px;height:3px;background:var(--red);margin:.75rem auto 0;border-radius:2px}
+
+/* HIGHLIGHTS */
+.highlights-section{padding:4rem 5%;background:var(--blue-light)}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:960px;margin:0 auto}
+.highlight-card{background:#fff;border-radius:1.25rem;padding:2rem 1.5rem;text-align:center;border:2px solid rgba(42,100,150,0.15);transition:all .3s}
+.highlight-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 8px 24px rgba(42,100,150,0.12)}
+.highlight-num{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.highlight-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.highlight-desc{font-size:.82rem;color:var(--mid);line-height:1.75}
+
+/* ITINERARY */
+.itinerary-section{padding:4rem 5%}
+.itinerary-inner{max-width:820px;margin:0 auto}
+.day-block{margin-bottom:3rem}
+.day-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding:1rem 1.5rem;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:1rem}
+.day-label{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;color:#fff}
+.day-sub{font-size:.82rem;color:rgba(255,255,255,.8)}
+.day-meals{display:flex;gap:.5rem;margin-left:auto}
+.meal-chip{background:rgba(255,255,255,.2);color:#fff;font-size:.7rem;padding:.2rem .55rem;border-radius:1rem;border:1px solid rgba(255,255,255,.3)}
+.meal-chip.none{background:rgba(0,0,0,.15);opacity:.6}
+
+.itinerary-item{display:flex;gap:1.25rem;margin-bottom:1.25rem;padding:1.25rem 1.5rem;background:#fff;border-radius:1rem;border:1.5px solid #FFE8CC;transition:border-color .2s}
+.itinerary-item:hover{border-color:var(--orange)}
+.itinerary-icon{font-size:2rem;flex-shrink:0;width:48px;text-align:center}
+.itinerary-name{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.35rem}
+.itinerary-detail{font-size:.83rem;color:var(--mid);line-height:1.75}
+.itinerary-tag{display:inline-block;background:var(--teal-light);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:1rem;margin-top:.4rem;margin-right:.3rem}
+.itinerary-tag.blue{background:var(--blue-light);color:var(--blue)}
+
+/* MEAL TABLE */
+.meal-table-section{padding:3rem 5%;background:var(--gray)}
+.meal-table-inner{max-width:640px;margin:0 auto}
+.meal-table{width:100%;border-collapse:collapse;background:#fff;border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.meal-table th{background:var(--blue);color:#fff;font-size:.82rem;font-weight:700;padding:.75rem 1rem;text-align:center}
+.meal-table td{font-size:.85rem;text-align:center;padding:.75rem 1rem;border-bottom:1px solid #FFE8CC;color:var(--dark)}
+.meal-table tr:last-child td{border-bottom:none}
+.meal-table tr:nth-child(even) td{background:var(--blue-light)}
+.meal-o{color:var(--teal);font-weight:700;font-size:1rem}
+.meal-x{color:#ccc;font-size:1rem}
+
+/* PRICE */
+.price-section{padding:4rem 5%;background:var(--light)}
+.price-inner{max-width:780px;margin:0 auto}
+.price-main{background:linear-gradient(135deg,#1a3a5c,var(--blue));border-radius:1.25rem;padding:2.5rem 2rem;text-align:center;color:#fff;margin-bottom:1.5rem}
+.price-amount{font-family:'Noto Serif TC',serif;font-size:3rem;font-weight:900;line-height:1}
+.price-amount small{font-size:1.1rem;font-weight:400;opacity:.8}
+.price-note{font-size:.85rem;opacity:.75;margin-top:.5rem}
+.price-team{background:rgba(255,255,255,.15);border-radius:.75rem;padding:.75rem 1rem;margin-top:1.25rem;font-size:.88rem;font-weight:700}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.price-card{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid #FFE8CC}
+.price-card-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--yellow);display:flex;align-items:center;gap:.5rem}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.price-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.88rem;color:var(--mid);line-height:1.6}
+.price-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.price-list.exclude li::before{content:'✗';color:#ccc}
+
+/* MEETING */
+.meeting-section{padding:4rem 5%;background:var(--gray)}
+.meeting-inner{max-width:780px;margin:0 auto}
+.meeting-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.meeting-card{background:#fff;border-radius:1.25rem;padding:1.75rem;border:2px solid #FFE8CC;display:flex;gap:1rem;align-items:flex-start}
+.meeting-icon{font-size:2.2rem;flex-shrink:0}
+.meeting-title{font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.meeting-detail{font-size:.83rem;color:var(--mid);line-height:1.75}
+.meeting-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:1rem;margin-bottom:.4rem}
+
+/* NOTICE */
+.notice-section{padding:3rem 5%}
+.notice-inner{max-width:780px;margin:0 auto}
+.notice-box{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid #FFE8CC}
+.notice-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.notice-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.notice-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.85rem;color:var(--mid);line-height:1.6}
+.notice-list li::before{content:'•';color:var(--blue);font-weight:700;flex-shrink:0}
+
+/* BOOK CTA */
+.book-section{background:linear-gradient(135deg,#1a3a5c 0%,var(--teal) 100%);padding:4.5rem 5%;text-align:center}
+.book-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.book-sub{color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:2.5rem;line-height:1.8}
+.book-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--blue);padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-outline-white{border:2px solid rgba(255,255,255,.7);color:#fff;padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-outline-white:hover{background:rgba(255,255,255,.15)}
+.book-info{margin-top:2rem;color:rgba(255,255,255,.65);font-size:.82rem;line-height:2}
+
+/* FOOTER */
+footer{background:var(--dark);padding:3.5rem 5% 1.5rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logos{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-logo-tourbus{height:44px;width:auto;border-radius:.5rem;background:#fff;padding:.25rem .5rem}
+.footer-tourbus{margin-top:1rem}
+.tourbus-badge{display:inline-block;background:var(--red);color:#fff;font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:2rem}
+.tourbus-desc{font-size:.75rem;color:rgba(255,255,255,0.45);margin-top:.5rem}
+.footer-contact-title{font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.55rem}
+.footer-contact-list a,.footer-contact-list span{font-size:.83rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s;line-height:1.5}
+.footer-contact-list a:hover{color:var(--yellow)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;transition:all .2s}
+.social-btn:hover{background:var(--red);color:#fff}
+.footer-license{display:flex;flex-direction:column;gap:.35rem}
+.footer-license span{font-size:.78rem;color:rgba(255,255,255,0.4)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.35)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .price-grid{grid-template-columns:1fr}
+  .meeting-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .day-meals{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="HM-LOGO.png" alt="宏美旅行社 x Fun鬆旅遊"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="tours.html">探索行程</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="index.html#contact">聯繫我們</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1.5rem">
+      <a href="tel:0982331633" class="nav-phone">0982 331633</a>
+      <a href="tel:0982331633" class="nav-cta">立即報名</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首頁</a><span>›</span>
+  <a href="tours.html">探索行程</a><span>›</span>
+  藍皮解憂號・阿塱壹三日遊
+</div>
+
+<!-- HERO -->
+<div class="tour-hero">
+  <div class="tour-hero-tag">🚂 三日遊・台東南迴深度之旅</div>
+  <h1 class="tour-hero-title">藍皮解憂號<br>阿塱壹三日遊</h1>
+  <p class="tour-hero-sub">搭乘全台最後一列非冷氣列車，穿越南迴山海<br>走進阿塱壹古道，聆聽太平洋的浪聲</p>
+  <div class="tour-hero-badges">
+    <span class="hero-badge-pill">🚂 藍皮解憂號</span>
+    <span class="hero-badge-pill">🌊 阿塱壹古道</span>
+    <span class="hero-badge-pill">📅 三天兩夜</span>
+    <span class="hero-badge-pill">👥 6人成團</span>
+    <span class="hero-badge-pill">💰 NT$9,100／人</span>
+  </div>
+</div>
+
+<!-- 海報 -->
+<div class="poster-section">
+  <img src="poster-train.jpg" alt="藍皮解憂號阿塱壹三日遊行程海報" class="poster-img">
+</div>
+
+<!-- 行程亮點 -->
+<section class="highlights-section">
+  <div class="section-header">
+    <div class="section-tag">HIGHLIGHTS</div>
+    <h2 class="section-title">行程亮點</h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-num">1</div>
+      <div class="highlight-title">綠色隧道・安平老街</div>
+      <div class="highlight-desc">出發首日穿越南台灣著名的綠色隧道，漫遊安平老街，感受府城百年歷史風情。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">2</div>
+      <div class="highlight-title">六堆客家文化園區</div>
+      <div class="highlight-desc">深入台灣南部客家聚落文化，了解六堆義民精神，是珍貴的在地歷史人文體驗。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">3</div>
+      <div class="highlight-title">藍皮解憂號・南迴鐵道</div>
+      <div class="highlight-desc">搭乘全台最後非冷氣復古列車，窗外山海交替，在多良、太麻里等站下車感受南迴之美。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">4</div>
+      <div class="highlight-title">阿塱壹古道・太平洋浪聲</div>
+      <div class="highlight-desc">全台最後一段未開發的原始海岸線，南田聽海、跑浪、攀登觀音鼻山頂，感受大自然震撼。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 行程安排 -->
+<section class="itinerary-section">
+  <div class="itinerary-inner">
+    <div class="section-header">
+      <div class="section-tag">ITINERARY</div>
+      <h2 class="section-title">三日行程安排</h2>
+    </div>
+
+    <!-- D1 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div>
+          <div class="day-label">DAY 1　中部出發・南台灣風情</div>
+          <div class="day-sub">宿：枋寮</div>
+        </div>
+        <div class="day-meals">
+          <span class="meal-chip none">早 ✗</span>
+          <span class="meal-chip none">午 ✗</span>
+          <span class="meal-chip none">晚 ✗</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🚌</div>
+        <div>
+          <div class="itinerary-name">中部集合出發</div>
+          <div class="itinerary-detail">台中高鐵會面點4 ／ 台中火車站鐵鹿大街A區集合，專車南下。</div>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🌳</div>
+        <div>
+          <div class="itinerary-name">綠色隧道</div>
+          <div class="itinerary-detail">行經南台灣著名的綠色林蔭隧道，感受大自然的清幽靜謐。</div>
+          <span class="itinerary-tag">📍 南台灣</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🏛️</div>
+        <div>
+          <div class="itinerary-name">安平老街（午餐自理）</div>
+          <div class="itinerary-detail">漫遊台南安平老街，品嚐在地小吃，感受府城百年歷史文化氛圍。午餐請自行安排。</div>
+          <span class="itinerary-tag">📍 台南安平</span>
+          <span class="itinerary-tag blue">🍽️ 午餐自理</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🏯</div>
+        <div>
+          <div class="itinerary-name">六堆客家文化園區</div>
+          <div class="itinerary-detail">深入了解台灣南部客家族群的歷史與文化，六堆義民精神是台灣重要的人文資產。</div>
+          <span class="itinerary-tag">📍 屏東內埔</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🏨</div>
+        <div>
+          <div class="itinerary-name">宿枋寮・休息養精</div>
+          <div class="itinerary-detail">抵達枋寮住宿，養精蓄銳，準備迎接明日藍皮解憂號的精彩旅程。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D2 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div>
+          <div class="day-label">DAY 2　藍皮解憂號・南迴山海</div>
+          <div class="day-sub">宿：知本溫泉飯店</div>
+        </div>
+        <div class="day-meals">
+          <span class="meal-chip">早 ✓</span>
+          <span class="meal-chip">午 ✓</span>
+          <span class="meal-chip none">晚 ✗</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🚂</div>
+        <div>
+          <div class="itinerary-name">9:50 藍皮解憂號・枋寮→知本</div>
+          <div class="itinerary-detail">搭乘全台最後一列非冷氣復古列車，感受窗外山海交替的南迴風光。沿途在加祿、大武、太麻里站下車導覽，多良站慢速通過欣賞海景，金崙段車上導覽解說。</div>
+          <span class="itinerary-tag">🚂 含門票</span>
+          <span class="itinerary-tag">📍 枋寮→知本</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🏨</div>
+        <div>
+          <div class="itinerary-name">知本溫泉飯店入住</div>
+          <div class="itinerary-detail">抵達台東知本，入住溫泉飯店，泡湯放鬆，享受南迴旅途後的舒適休憩。</div>
+          <span class="itinerary-tag">📍 台東知本</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- D3 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div>
+          <div class="day-label">DAY 3　阿塱壹古道・太平洋原始海岸</div>
+          <div class="day-sub">回程</div>
+        </div>
+        <div class="day-meals">
+          <span class="meal-chip">早 ✓</span>
+          <span class="meal-chip">午 ✓</span>
+          <span class="meal-chip none">晚 ✗</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🌊</div>
+        <div>
+          <div class="itinerary-name">阿塱壹古道</div>
+          <div class="itinerary-detail">全台最後一段保留原始風貌的海岸古道，步行於礫石海灘之上，感受太平洋的壯闊浪聲。途經南田聽海、跑浪、攀登觀音鼻山頂，最後抵達軍艦岩。</div>
+          <span class="itinerary-tag">🎟️ 含門票</span>
+          <span class="itinerary-tag">📍 屏東旭海</span>
+        </div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-icon">🚌</div>
+        <div>
+          <div class="itinerary-name">賦歸・返回台中</div>
+          <div class="itinerary-detail">古道健行後專車北返，回到台中高鐵 ／ 台中火車站，結束三天兩夜的精彩旅程。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 餐食住宿表 -->
+<section class="meal-table-section">
+  <div class="meal-table-inner">
+    <div class="section-header">
+      <div class="section-tag">MEALS & STAY</div>
+      <h2 class="section-title">餐食住宿一覽</h2>
+    </div>
+    <table class="meal-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>早餐</th>
+          <th>午餐</th>
+          <th>晚餐</th>
+          <th>住宿</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>D1</strong></td>
+          <td><span class="meal-x">✗</span></td>
+          <td><span class="meal-x">✗</span></td>
+          <td><span class="meal-x">✗</span></td>
+          <td><span class="meal-o">✓</span></td>
+        </tr>
+        <tr>
+          <td><strong>D2</strong></td>
+          <td><span class="meal-o">✓</span></td>
+          <td><span class="meal-o">✓</span></td>
+          <td><span class="meal-x">✗</span></td>
+          <td><span class="meal-o">✓</span></td>
+        </tr>
+        <tr>
+          <td><strong>D3</strong></td>
+          <td><span class="meal-o">✓</span></td>
+          <td><span class="meal-o">✓</span></td>
+          <td><span class="meal-x">✗</span></td>
+          <td><span class="meal-x">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 費用說明 -->
+<section class="price-section">
+  <div class="price-inner">
+    <div class="section-header">
+      <div class="section-tag">PRICING</div>
+      <h2 class="section-title">費用說明</h2>
+    </div>
+    <div class="price-main">
+      <div class="price-amount">NT$9,100 <small>／人</small></div>
+      <div class="price-note">三天兩夜，含稅報價</div>
+      <div class="price-team">👥 6人成團・歡迎揪團同行</div>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-card-title">✅ 費用包含</div>
+        <ul class="price-list">
+          <li>來回專車交通</li>
+          <li>旅遊責任險250萬</li>
+          <li>意外醫療險20萬</li>
+          <li>全程導覽解說</li>
+          <li>藍皮解憂號火車票（枋寮→知本）</li>
+          <li>阿塱壹古道門票</li>
+          <li>餐食依住宿表格提供</li>
+          <li>兩晚住宿</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-card-title">❌ 費用不含</div>
+        <ul class="price-list exclude">
+          <li>D1 全日餐食（自理）</li>
+          <li>D2、D3 晚餐（自理）</li>
+          <li>個人消費與購物</li>
+          <li>行程外額外費用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 集合地點 -->
+<section class="meeting-section">
+  <div class="meeting-inner">
+    <div class="section-header">
+      <div class="section-tag">MEETING POINT</div>
+      <h2 class="section-title">集合地點</h2>
+    </div>
+    <div class="meeting-grid">
+      <div class="meeting-card">
+        <div class="meeting-icon">🚅</div>
+        <div>
+          <span class="meeting-tag">高鐵集合</span>
+          <div class="meeting-title">台中高鐵站</div>
+          <div class="meeting-detail">台中高鐵站 會面點 4（Meeting Point 4）<br>請依現場指標前往，工作人員會在場等候。</div>
+        </div>
+      </div>
+      <div class="meeting-card">
+        <div class="meeting-icon">🚂</div>
+        <div>
+          <span class="meeting-tag">火車集合</span>
+          <div class="meeting-title">台中火車站 鐵鹿大街A區</div>
+          <div class="meeting-detail">台中火車站 鐵鹿大街 1F A區入口<br>台鐵便當旁，大型招牌易辨識。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 注意事項 -->
+<section class="notice-section">
+  <div class="notice-inner">
+    <div class="section-header">
+      <div class="section-tag">NOTICE</div>
+      <h2 class="section-title">注意事項</h2>
+    </div>
+    <div class="notice-box">
+      <ul class="notice-list">
+        <li>阿塱壹古道為自然生態保護區，需事先申請入園，請提前確認名額。</li>
+        <li>古道健行需具備基本體力，建議穿著舒適運動鞋，攜帶防曬用品及飲用水。</li>
+        <li>藍皮解憂號為非冷氣列車，夏季出行請注意防暑，建議攜帶薄外套備用。</li>
+        <li>D1 全日三餐請自行安排，安平老街附近餐廳選擇豐富。</li>
+        <li>行程因天候或交通因素可能略有調整，以現場導遊安排為準。</li>
+        <li>6人成團，未達成團人數時，宏美將提前通知並協商退款或改期。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 報名 CTA -->
+<section class="book-section">
+  <div class="book-title">準備踏上南迴了嗎？</div>
+  <p class="book-sub">6人成團，歡迎揪親友同行<br>有任何問題，歡迎電話或 LINE 直接詢問</p>
+  <div class="book-btns">
+    <a href="tel:0982331633" class="btn-white">📞 電話報名 0982 331633</a>
+    <a href="https://line.me/R/ti/p/@hm9420" target="_blank" class="btn-outline-white">💬 LINE 詢問 @hm9420</a>
+  </div>
+  <div class="book-info">
+    宏美旅行社　交觀甲字：7619　品保彰字：0081<br>
+    彰化縣彰化市金馬路一段409號
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-block">
+        <div class="footer-logos">
+          <a href="index.html"><img src="HM-LOGO.png" alt="宏美旅行社" class="footer-logo"></a>
+          <a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener"><img src="tourbus-logo.jpg" alt="台灣觀巴" class="footer-logo-tourbus"></a>
+        </div>
+        <div class="footer-tourbus">
+          <span class="tourbus-badge"><a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">🚌 台灣觀巴官方承辦旅行社</a></span>
+          <div class="tourbus-desc">交通部觀光署認可 · 4人成團</div>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <div class="footer-contact-title">聯絡我們</div>
+        <div class="footer-contact-list">
+          <a href="tel:0982331633">📞 聯絡電話：0982 331633</a>
+          <a href="https://line.me/R/ti/p/@hm9420">💬 LINE：@hm9420</a>
+          <a href="https://api.whatsapp.com/send?phone=886982218544">💚 WhatsApp：+886 982218544</a>
+          <span>💬 WeChat：hmhm5277</span>
+          <a href="mailto:pley168@gmail.com">✉️ Email：pley168@gmail.com</a>
+          <span>📍 彰化縣彰化市金馬路一段409號</span>
+          <span>交觀甲字：7619　品保彰字：0081</span>
+        </div>
+      </div>
+      <div class="footer-social-block">
+        <div class="footer-contact-title">追蹤我們</div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hm1766fun" class="social-btn" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <div class="footer-license">
+          <span>交觀甲字：7619</span>
+          <span>品保彰字：0081</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright © 2026 宏美旅行社 × Fun鬆旅遊　|　All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

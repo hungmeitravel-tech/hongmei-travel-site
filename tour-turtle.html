@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>龜山島一日遊・繞島登島賞鯨 · 宏美旅行社</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E03A2F;--red-light:#F26B5E;--orange:#F5A623;--yellow:#FFD966;
+  --cream:#FFFDF8;--light:#FFF5E6;--gray:#F7F3EE;--dark:#2C2C2C;--mid:#6B6B6B;
+  --ocean:#0B6E8C;--ocean-light:#E0F4FA;--teal:#1A9E8A;--teal-light:#E0F4F1;
+  --navy:#1a3a5c;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,253,248,0.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:56px;width:auto;display:block}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--mid);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:.5rem 1.4rem;border-radius:2rem;font-size:.875rem;font-weight:700;text-decoration:none}
+.nav-phone{font-weight:700;font-size:1rem;color:var(--red);text-decoration:none}
+.nav-phone::before{content:"📞";margin-right:.3rem}
+.breadcrumb{padding:.75rem 5%;background:#fff;border-bottom:1px solid #FFE8CC;font-size:.8rem;color:var(--mid);margin-top:68px}
+.breadcrumb a{color:var(--mid);text-decoration:none}
+.breadcrumb span{margin:0 .4rem;opacity:.5}
+
+/* HERO */
+.tour-hero{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--ocean) 55%,var(--teal) 100%);
+  padding:5rem 5% 4rem;text-align:center;position:relative;overflow:hidden;
+}
+.tour-hero::before{
+  content:'🐋🌊🐬🌊🐋🌊🐬🌊🐋🌊';
+  position:absolute;top:1rem;left:0;right:0;
+  font-size:1.2rem;letter-spacing:.5rem;opacity:.12;white-space:nowrap;overflow:hidden;
+}
+.tour-hero-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.78rem;font-weight:700;padding:.4rem 1.2rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:1.25rem}
+.tour-hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.75rem}
+.tour-hero-sub{color:rgba(255,255,255,0.85);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.tour-hero-badges{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-badge-pill{background:rgba(255,255,255,0.18);color:#fff;border:1.5px solid rgba(255,255,255,0.4);padding:.45rem 1.1rem;border-radius:2rem;font-size:.82rem;font-weight:700}
+
+/* SEASON NOTICE */
+.season-bar{background:linear-gradient(90deg,var(--ocean),var(--teal));padding:1rem 5%;text-align:center}
+.season-bar p{color:#fff;font-size:.88rem;font-weight:700;letter-spacing:.05em}
+.season-bar span{background:rgba(255,255,255,.2);border-radius:1rem;padding:.2rem .7rem;margin:0 .3rem}
+
+/* POSTER */
+.poster-section{padding:3rem 5%;max-width:900px;margin:0 auto;text-align:center}
+.poster-img{width:100%;max-width:500px;border-radius:1.5rem;box-shadow:0 16px 48px rgba(0,0,0,0.16);margin:0 auto;display:block}
+
+/* PHOTO GRID */
+.photo-section{padding:2rem 5% 3rem;max-width:1100px;margin:0 auto}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.photo-item{border-radius:1rem;overflow:hidden;aspect-ratio:4/3}
+.photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.photo-item:hover img{transform:scale(1.04)}
+.photo-label{text-align:center;font-size:.78rem;color:var(--mid);margin-top:.5rem;font-weight:500}
+
+/* SECTION */
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:2rem;letter-spacing:.1em;margin-bottom:.75rem}
+.section-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--dark)}
+.section-title::after{content:'';display:block;width:48px;height:3px;background:var(--red);margin:.75rem auto 0;border-radius:2px}
+
+/* HIGHLIGHTS */
+.highlights-section{padding:4rem 5%;background:var(--ocean-light)}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:960px;margin:0 auto}
+.highlight-card{background:#fff;border-radius:1.25rem;padding:2rem 1.5rem;text-align:center;border:2px solid rgba(11,110,140,.15);transition:all .3s}
+.highlight-card:hover{transform:translateY(-4px);border-color:var(--ocean);box-shadow:0 8px 24px rgba(11,110,140,.12)}
+.highlight-num{width:40px;height:40px;border-radius:50%;background:var(--ocean);color:#fff;font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.highlight-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+.highlight-desc{font-size:.82rem;color:var(--mid);line-height:1.75}
+
+/* ITINERARY */
+.itinerary-section{padding:4rem 5%}
+.itinerary-inner{max-width:820px;margin:0 auto}
+.time-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--ocean);color:#fff;font-size:.82rem;font-weight:700;padding:.4rem 1rem;border-radius:2rem;margin-bottom:1.25rem}
+.itinerary-item{display:flex;gap:1.25rem;margin-bottom:1.25rem;padding:1.25rem 1.5rem;background:#fff;border-radius:1rem;border:1.5px solid #FFE8CC;transition:border-color .2s}
+.itinerary-item:hover{border-color:var(--orange)}
+.itinerary-icon{font-size:2rem;flex-shrink:0;width:48px;text-align:center}
+.itinerary-name{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.35rem}
+.itinerary-detail{font-size:.83rem;color:var(--mid);line-height:1.75}
+.itinerary-tag{display:inline-block;background:var(--ocean-light);color:var(--ocean);font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:1rem;margin-top:.4rem;margin-right:.3rem}
+.itinerary-tag.orange{background:#FFF3E0;color:#E65100}
+.itinerary-tag.green{background:var(--teal-light);color:var(--teal)}
+
+/* PRICE */
+.price-section{padding:4rem 5%;background:var(--light)}
+.price-inner{max-width:780px;margin:0 auto}
+.price-main{background:linear-gradient(135deg,var(--navy),var(--ocean));border-radius:1.25rem;padding:2.5rem 2rem;text-align:center;color:#fff;margin-bottom:1.5rem}
+.price-amount{font-family:'Noto Serif TC',serif;font-size:3rem;font-weight:900;line-height:1}
+.price-amount small{font-size:1.1rem;font-weight:400;opacity:.8}
+.price-note{font-size:.85rem;opacity:.75;margin-top:.5rem}
+.price-team{background:rgba(255,255,255,.15);border-radius:.75rem;padding:.75rem 1rem;margin-top:1.25rem;font-size:.88rem;font-weight:700}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.price-card{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid #FFE8CC}
+.price-card-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--yellow)}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.price-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.88rem;color:var(--mid);line-height:1.6}
+.price-list li::before{content:'✓';color:var(--ocean);font-weight:700;flex-shrink:0}
+.price-list.exclude li::before{content:'✗';color:#ccc}
+
+/* NOTICE */
+.notice-section{padding:3rem 5%;background:var(--gray)}
+.notice-inner{max-width:780px;margin:0 auto}
+.notice-box{background:#fff;border-radius:1.25rem;padding:2rem;border:2px solid #FFE8CC;margin-bottom:1.5rem}
+.notice-box.warn{border-color:rgba(11,110,140,.3);background:var(--ocean-light)}
+.notice-title{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.notice-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.notice-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.85rem;color:var(--mid);line-height:1.6}
+.notice-list li::before{content:'•';color:var(--ocean);font-weight:700;flex-shrink:0}
+
+/* BOOK CTA */
+.book-section{background:linear-gradient(135deg,var(--navy),var(--ocean));padding:4.5rem 5%;text-align:center}
+.book-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.book-sub{color:rgba(255,255,255,.8);font-size:.95rem;margin-bottom:2.5rem;line-height:1.8}
+.book-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--ocean);padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-outline-white{border:2px solid rgba(255,255,255,.7);color:#fff;padding:.9rem 2.2rem;border-radius:2rem;font-size:1rem;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-outline-white:hover{background:rgba(255,255,255,.15)}
+.book-info{margin-top:2rem;color:rgba(255,255,255,.65);font-size:.82rem;line-height:2}
+
+/* FOOTER */
+footer{background:var(--dark);padding:3.5rem 5% 1.5rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logos{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+.footer-logo-tourbus{height:44px;width:auto;border-radius:.5rem;background:#fff;padding:.25rem .5rem}
+.footer-tourbus{margin-top:1rem}
+.tourbus-badge{display:inline-block;background:var(--red);color:#fff;font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:2rem}
+.tourbus-desc{font-size:.75rem;color:rgba(255,255,255,0.45);margin-top:.5rem}
+.footer-contact-title{font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.1em;margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+.footer-contact-list{display:flex;flex-direction:column;gap:.55rem}
+.footer-contact-list a,.footer-contact-list span{font-size:.83rem;color:rgba(255,255,255,0.6);text-decoration:none;line-height:1.5}
+.footer-contact-list a:hover{color:var(--yellow)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;transition:all .2s}
+.social-btn:hover{background:var(--red);color:#fff}
+.footer-license span{font-size:.78rem;color:rgba(255,255,255,0.4);display:block;margin-bottom:.35rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.35)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .price-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .photo-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="HM-LOGO.png" alt="宏美旅行社 x Fun鬆旅遊"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="index.html#tours">探索行程</a></li>
+      <li><a href="index.html#contact">聯繫我們</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1.5rem">
+      <a href="tel:0982331633" class="nav-phone">0982 331633</a>
+      <a href="tel:0982331633" class="nav-cta">立即報名</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首頁</a><span>›</span>探索行程<span>›</span>龜山島一日遊
+</div>
+
+<!-- HERO -->
+<div class="tour-hero">
+  <div class="tour-hero-tag">🐋 一日遊・台中出發・宜蘭龜山島</div>
+  <h1 class="tour-hero-title">龜山島一日遊</h1>
+  <p class="tour-hero-sub">蘭陽博物館・烏石港出海・繞島登島・海上賞鯨豚<br>台灣唯一活火山島，遇見太平洋的神秘與壯闊</p>
+  <div class="tour-hero-badges">
+    <span class="hero-badge-pill">🏝️ 繞島・登島</span>
+    <span class="hero-badge-pill">🐬 海上賞鯨豚</span>
+    <span class="hero-badge-pill">🏛️ 蘭陽博物館</span>
+    <span class="hero-badge-pill">🚌 台中出發</span>
+    <span class="hero-badge-pill">💰 NT$2,600／人</span>
+  </div>
+</div>
+
+<!-- 開放季節提示 -->
+<div class="season-bar">
+  <p>🗓️ 龜山島開放季節：<span>每年 3月～11月</span>・<span>週三不開放</span>・<span>天候不佳依現場公告為準</span></p>
+</div>
+
+<!-- 海報 -->
+<div class="poster-section">
+  <img src="poster-turtle.jpg" alt="龜山島一日遊行程海報" class="poster-img">
+</div>
+
+<!-- 景點照片 -->
+<div class="photo-section">
+  <div class="photo-grid">
+    <div>
+      <div class="photo-item"><img src="蘭博.jpg" alt="蘭陽博物館"></div>
+      <div class="photo-label">蘭陽博物館</div>
+    </div>
+    <div>
+      <div class="photo-item"><img src="龜山.jpg" alt="龜山島賞鯨"></div>
+      <div class="photo-label">海上賞鯨豚</div>
+    </div>
+    <div>
+      <div class="photo-item"><img src="烏石港.jpg" alt="烏石港"></div>
+      <div class="photo-label">烏石港</div>
+    </div>
+    <div>
+      <div class="photo-item"><img src="蘭2.jpg" alt="蘭陽博物館空拍"></div>
+      <div class="photo-label">蘭陽博物館空拍</div>
+    </div>
+    <div>
+      <div class="photo-item"><img src="龜山2.jpg" alt="龜山島鯨豚"></div>
+      <div class="photo-label">鯨豚與龜山島</div>
+    </div>
+    <div>
+      <div class="photo-item"><img src="烏2.jpg" alt="烏石港日落"></div>
+      <div class="photo-label">烏石港日落</div>
+    </div>
+  </div>
+</div>
+
+<!-- 行程亮點 -->
+<section class="highlights-section">
+  <div class="section-header">
+    <div class="section-tag">HIGHLIGHTS</div>
+    <h2 class="section-title">行程亮點</h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-num">1</div>
+      <div class="highlight-title">蘭陽博物館</div>
+      <div class="highlight-desc">獲得多項建築大獎的世界級博物館，以單面山地形為設計概念，融入蘭陽平原自然景觀，是宜蘭最美地標。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">2</div>
+      <div class="highlight-title">烏石港出海・繞島</div>
+      <div class="highlight-desc">從烏石港搭船出發，航行約25分鐘抵達龜山島，乘船繞島欣賞龜山八景，包括牛奶海、眼鏡洞等奇景。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">3</div>
+      <div class="highlight-title">登島體驗</div>
+      <div class="highlight-desc">登上台灣唯一活火山島，島上設有軍事坑道、龜尾湖步道，導覽員帶領探索龜山島的生態與歷史秘密。</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-num">4</div>
+      <div class="highlight-title">海上賞鯨豚</div>
+      <div class="highlight-desc">龜山島周邊海域是鯨豚洄游必經之地，多達17種鯨豚出沒，賞鯨最佳季節4～9月，與海豚同游的感動無可比擬。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 行程安排 -->
+<section class="itinerary-section">
+  <div class="itinerary-inner">
+    <div class="section-header">
+      <div class="section-tag">ITINERARY</div>
+      <h2 class="section-title">一日行程安排</h2>
+    </div>
+
+    <div style="margin-bottom:1.25rem"><div class="time-label">🚌 台中出發</div></div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🚌</div>
+      <div>
+        <div class="itinerary-name">台中高鐵 ／ 台中火車站集合</div>
+        <div class="itinerary-detail">台中高鐵會面點4 ／ 台中火車站鐵鹿大街A區集合，專車前往宜蘭頭城。</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:1.25rem;margin-top:2rem"><div class="time-label">🏛️ 上午｜蘭陽博物館</div></div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🏛️</div>
+      <div>
+        <div class="itinerary-name">蘭陽博物館參觀</div>
+        <div class="itinerary-detail">參觀獲得多項國際建築獎項的蘭陽博物館，以單面山地形為造型靈感，展示蘭陽平原的自然生態、史前文化與宜蘭在地人文歷史，是來宜蘭必訪的世界級地標。</div>
+        <span class="itinerary-tag">📍 宜蘭頭城</span>
+        <span class="itinerary-tag">🎟️ 含門票</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:1.25rem;margin-top:2rem"><div class="time-label">🚢 上午｜烏石港出海</div></div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">⚓</div>
+      <div>
+        <div class="itinerary-name">烏石港搭船出海</div>
+        <div class="itinerary-detail">前往宜蘭頭城烏石港登船，從這裡出發是前往龜山島的唯一路線。搭乘賞鯨船出海，迎著太平洋海風，展開神秘的龜山島之旅。</div>
+        <span class="itinerary-tag">📍 宜蘭頭城烏石港</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:1.25rem;margin-top:2rem"><div class="time-label">🏝️ 龜山島・繞島登島賞鯨</div></div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🚢</div>
+      <div>
+        <div class="itinerary-name">乘船繞龜山島・龜山八景</div>
+        <div class="itinerary-detail">乘船環繞龜山島一圈，欣賞龜首、龜甲、龜尾不同視角的壯觀景致，尋找龜山八景：牛奶海夢幻蒂芬尼藍、眼鏡洞鐘乳石、海底溫泉湧出，景景令人嘆為觀止。</div>
+        <span class="itinerary-tag">🐢 龜山八景</span>
+        <span class="itinerary-tag">🌊 牛奶海</span>
+      </div>
+    </div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🏝️</div>
+      <div>
+        <div class="itinerary-name">登島體驗・島上導覽</div>
+        <div class="itinerary-detail">登上台灣唯一活火山島，由專業導覽員帶領探索島上軍事坑道遺跡、龜尾湖步道、普陀巖觀音像，感受龜山島的神秘歷史與豐富生態。清潔費100元現場自付。</div>
+        <span class="itinerary-tag">🎟️ 含登島費</span>
+        <span class="itinerary-tag orange">⚠️ 清潔費100元現場自付</span>
+      </div>
+    </div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🐬</div>
+      <div>
+        <div class="itinerary-name">海上賞鯨豚</div>
+        <div class="itinerary-detail">龜山島周邊海域是全台最佳賞鯨地點之一，多達17種鯨豚在此洄游，包括飛旋海豚、瓶鼻海豚等。4～9月是賞鯨最佳季節，幸運時可見成群海豚伴船飛躍，震撼難忘。</div>
+        <span class="itinerary-tag green">🐋 最佳季節4～9月</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:1.25rem;margin-top:2rem"><div class="time-label">🚌 返程台中</div></div>
+    <div class="itinerary-item">
+      <div class="itinerary-icon">🚌</div>
+      <div>
+        <div class="itinerary-name">賦歸・返回台中</div>
+        <div class="itinerary-detail">返回烏石港後，專車北返台中高鐵 ／ 台中火車站，結束充滿海洋驚喜的龜山島一日遊。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 費用說明 -->
+<section class="price-section">
+  <div class="price-inner">
+    <div class="section-header">
+      <div class="section-tag">PRICING</div>
+      <h2 class="section-title">費用說明</h2>
+    </div>
+    <div class="price-main">
+      <div class="price-amount">NT$2,600 <small>／人</small></div>
+      <div class="price-note">台中出發・含車資・保險・繞島・登島・賞鯨</div>
+      <div class="price-team">🗓️ 開放季節：每年3月～11月・週三不開放</div>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-card-title">✅ 費用包含</div>
+        <ul class="price-list">
+          <li>台中來回專車車資</li>
+          <li>旅遊保險</li>
+          <li>蘭陽博物館門票</li>
+          <li>繞島船票</li>
+          <li>登島費用</li>
+          <li>賞鯨行程</li>
+          <li>專業導覽解說</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-card-title">❌ 費用不含</div>
+        <ul class="price-list exclude">
+          <li>登島清潔費100元（現場自付）</li>
+          <li>餐食（午餐請自行安排）</li>
+          <li>個人消費與購物</li>
+          <li>個人旅遊平安保險</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 注意事項 -->
+<section class="notice-section">
+  <div class="notice-inner">
+    <div class="section-header">
+      <div class="section-tag">NOTICE</div>
+      <h2 class="section-title">注意事項</h2>
+    </div>
+    <div class="notice-box warn">
+      <div class="notice-title">⚠️ 重要提醒</div>
+      <ul class="notice-list">
+        <li>實際船班、登島及賞鯨安排，依當日天候、海象與現場公告為準。</li>
+        <li>龜山島每年 12月～2月東北季風季節封島，不開放登島，請注意出發日期。</li>
+        <li>週三龜山島不對一般民眾開放，請避開週三出行。</li>
+        <li>天候不佳或海象不良時，現場可能調整或取消登島與賞鯨行程，敬請見諒。</li>
+      </ul>
+    </div>
+    <div class="notice-box">
+      <div class="notice-title">🌊 出海準備事項</div>
+      <ul class="notice-list">
+        <li>建議自備暈船藥，於出發前30分鐘服用。</li>
+        <li>請攜帶帽子、太陽眼鏡與防曬乳液，海上陽光強烈。</li>
+        <li>建議穿著輕便運動服裝與防滑鞋，方便登島步道行走。</li>
+        <li>心臟病、高血壓患者、懷孕26週以上孕婦請勿登船，請事先告知工作人員。</li>
+        <li>登島時請攜帶身分證或健保卡，供港警查驗。</li>
+        <li>島上開放區域以外禁止進入，請遵守導覽員指示。</li>
+        <li>請勿將任何物品拋入海中或餵食鯨豚，維護海洋生態。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 報名 CTA -->
+<section class="book-section">
+  <div class="book-title">準備出海探島了嗎？</div>
+  <p class="book-sub">有任何問題，歡迎電話或 LINE 直接詢問<br>每年3月～11月開放，提早報名以免向隅</p>
+  <div class="book-btns">
+    <a href="tel:0982331633" class="btn-white">📞 電話報名 0982 331633</a>
+    <a href="https://line.me/R/ti/p/@hm9420" target="_blank" class="btn-outline-white">💬 LINE 詢問 @hm9420</a>
+  </div>
+  <div class="book-info">
+    宏美旅行社　交觀甲字：7619　品保彰字：0081<br>
+    彰化縣彰化市金馬路一段409號
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logos">
+          <a href="index.html"><img src="HM-LOGO.png" alt="宏美旅行社" class="footer-logo"></a>
+          <a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank"><img src="logo-1.jpg" alt="台灣觀巴" class="footer-logo-tourbus"></a>
+        </div>
+        <div class="footer-tourbus">
+          <span class="tourbus-badge"><a href="https://www.taiwantourbus.com.tw/C/tw/home" target="_blank" style="color:#fff;text-decoration:none">🚌 台灣觀巴官方承辦旅行社</a></span>
+          <div class="tourbus-desc">交通部觀光署認可 · 4人成團</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-contact-title">聯絡我們</div>
+        <div class="footer-contact-list">
+          <a href="tel:0982331633">📞 0982 331633</a>
+          <a href="https://line.me/R/ti/p/@hm9420">💬 LINE：@hm9420</a>
+          <a href="https://api.whatsapp.com/send?phone=886982218544">💚 WhatsApp：+886 982218544</a>
+          <span>💬 WeChat：hmhm5277</span>
+          <a href="mailto:pley168@gmail.com">✉️ pley168@gmail.com</a>
+          <span>📍 彰化縣彰化市金馬路一段409號</span>
+          <span>交觀甲字：7619　品保彰字：0081</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-contact-title">追蹤我們</div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hm1766fun" class="social-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+        <div class="footer-license">
+          <span>交觀甲字：7619</span>
+          <span>品保彰字：0081</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright © 2026 宏美旅行社 × Fun鬆旅遊　|　All Rights Reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
